@@ -9,7 +9,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  password = ''; // it is new property
   onButtonClick() {
-    console.log('Button is clicked');
+    // console.log('Button is clicked');
+    this.password = 'Password!!!';
+  }
+
+  getPassword() {
+    return this.password;
   }
 }
