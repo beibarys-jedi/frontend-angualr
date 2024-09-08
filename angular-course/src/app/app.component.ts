@@ -9,17 +9,29 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  password = ''; // it is new property
+  includeLetters = false;
+  includeNumbers = false;
+  includeSymbols = false;
+
+  password = '';
+
+  onChangeUseLetters() {
+    this.includeLetters != this.includeLetters;
+  }
+  onChangeUseNumbers() {
+    this.includeNumbers != this.includeNumbers;
+  }
+  onChangeUseSymbols() {
+    this.includeSymbols != this.includeSymbols;
+  }
+
   onButtonClick() {
-    // console.log('Button is clicked');
-    this.password = 'Password!!!';
-  }
-
-  getPassword() {
-    return this.password;
-  }
-
-  getName() {
-    return 'Alexis';
+    console.log(`
+      About to generate the following:
+      Include letters: ${this.includeLetters} 
+      Include numbers: ${this.includeNumbers} 
+      Include symbols: ${this.includeSymbols} 
+      `);
+    this.password = 'MY PASSWORD!!!';
   }
 }
